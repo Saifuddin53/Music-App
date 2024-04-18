@@ -8,7 +8,7 @@ import com.myprojects.musicapp.ui.Screen
 
 class MainViewModel: ViewModel() {
     private val _currentScreen: MutableState<Screen> =
-        mutableStateOf(Screen.DrawerScreen.AddAccount)
+        mutableStateOf(Screen.DrawerScreen.Account)
 
     val currentScreen: MutableState<Screen>
         get() = _currentScreen
