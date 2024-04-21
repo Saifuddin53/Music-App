@@ -18,7 +18,11 @@ fun Navigation(
     viewModel: MainViewModel = viewModel(),
     pd: PaddingValues
 ) {
-    NavHost(navController = navController as NavHostController, startDestination = Screen.DrawerScreen.Account.route, modifier = Modifier.padding(pd)) {
+    NavHost(
+        navController = navController as NavHostController,
+        startDestination = Screen.DrawerScreen.Account.route,
+        modifier = Modifier.padding(pd)
+    ) {
         composable(Screen.DrawerScreen.Account.route) {
 
         }

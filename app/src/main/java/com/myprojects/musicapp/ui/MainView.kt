@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.myprojects.musicapp.AddAccountDialog
 import com.myprojects.musicapp.MainViewModel
 import com.myprojects.musicapp.Navigation
 import kotlinx.coroutines.launch
@@ -53,6 +54,10 @@ fun MainView() {
 
     val title = remember {
         mutableStateOf(currentScreen.title)
+    }
+    
+    val dialogState = remember {
+        mutableStateOf(false)
     }
 
     Scaffold(
@@ -86,8 +91,10 @@ fun MainView() {
                         }
                         if(item.dRoute == "add_account") {
                             //open dialog
+                            dialogState.value = true
                         }else {
                             controller.navigate(item.dRoute)
+                            viewModel.setCurrentScreen(item)
                             title.value = item.dTitle
                         }
                     }
@@ -96,6 +103,7 @@ fun MainView() {
         }
     ) {
         Navigation(navController = controller, pd = it)
+        AddAccountDialog(dialogOpen = dialogState)
     }
 }
 
@@ -134,3 +142,4 @@ fun DrawerItemPreview() {
 
     }
 }
+
