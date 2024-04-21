@@ -104,5 +104,3 @@ fun AddAccountDialog(dialogOpen: MutableState<Boolean>) {
 //modifier = Modifier.fillMaxWidth()) {
 //    Text(text = "Add account")
 //}
-
-//this is my new repo

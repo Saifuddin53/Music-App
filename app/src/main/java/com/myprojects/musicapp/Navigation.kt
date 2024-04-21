@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.myprojects.musicapp.ui.AccountView
 import com.myprojects.musicapp.ui.MainView
 import com.myprojects.musicapp.ui.Screen
 
@@ -24,7 +25,7 @@ fun Navigation(
         modifier = Modifier.padding(pd)
     ) {
         composable(Screen.DrawerScreen.Account.route) {
-
+            AccountView()
         }
 
         composable(Screen.DrawerScreen.Subscription.route) {
