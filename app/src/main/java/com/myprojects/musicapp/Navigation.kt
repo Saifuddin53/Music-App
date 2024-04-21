@@ -12,6 +12,7 @@ import androidx.navigation.compose.composable
 import com.myprojects.musicapp.ui.AccountView
 import com.myprojects.musicapp.ui.MainView
 import com.myprojects.musicapp.ui.Screen
+import com.myprojects.musicapp.ui.SubscriptionView
 
 @Composable
 fun Navigation(
@@ -29,7 +30,7 @@ fun Navigation(
         }
 
         composable(Screen.DrawerScreen.Subscription.route) {
-
+            SubscriptionView()
         }
     }
 }
