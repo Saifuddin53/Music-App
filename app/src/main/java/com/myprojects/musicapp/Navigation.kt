@@ -32,5 +32,17 @@ fun Navigation(
         composable(Screen.DrawerScreen.Subscription.route) {
             SubscriptionView()
         }
+
+        composable(Screen.BottomScreen.Home.route) {
+
+        }
+
+        composable(Screen.BottomScreen.Library.route) {
+
+        }
+
+        composable(Screen.BottomScreen.Browse.route) {
+
+        }
     }
 }

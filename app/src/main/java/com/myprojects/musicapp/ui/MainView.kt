@@ -9,8 +9,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
@@ -60,7 +63,30 @@ fun MainView() {
         mutableStateOf(false)
     }
 
+    val bottomBar: @Composable () -> Unit = {
+        if(currentScreen is Screen.DrawerScreen || currentScreen == Screen.BottomScreen.Home){
+            BottomNavigation(modifier = Modifier.wrapContentSize()) {
+                screensInBottomBar.forEach {
+                    item ->
+                    BottomNavigationItem(selected = currentRoute == item.bRoute,
+                        onClick = { controller.navigate(item.bRoute) },
+                        icon = {
+                            Icon(painter = painterResource(id = item.icon),
+                            contentDescription = null)
+                               },
+                        label = {
+                            Text(text = item.bTitle)
+                        },
+                        selectedContentColor = Color.White,
+                        unselectedContentColor = Color.Black
+                    )
+                }
+            }
+        }
+    }
+
     Scaffold(
+        bottomBar = bottomBar,
         topBar = {
             TopAppBar(
                 title = {
