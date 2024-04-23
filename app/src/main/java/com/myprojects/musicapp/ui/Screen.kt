@@ -17,8 +17,8 @@ sealed class Screen(val title: String, val route: String) {
                 R.drawable.baseline_video_library_24
             )
             object Browse: BottomScreen(
-                "Home",
-                "home",
+                "Browse",
+                "browse",
                 R.drawable.baseline_apps_24
             )
         }
