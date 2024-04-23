@@ -10,6 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.myprojects.musicapp.ui.AccountView
+import com.myprojects.musicapp.ui.BrowseView
 import com.myprojects.musicapp.ui.HomeView
 import com.myprojects.musicapp.ui.MainView
 import com.myprojects.musicapp.ui.Screen
@@ -43,7 +44,7 @@ fun Navigation(
         }
 
         composable(Screen.BottomScreen.Browse.route) {
-
+            BrowseView()
         }
     }
 }

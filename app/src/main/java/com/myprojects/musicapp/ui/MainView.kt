@@ -23,6 +23,7 @@ import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -75,7 +76,7 @@ fun MainView() {
                             contentDescription = null)
                                },
                         label = {
-                            Text(text = item.bTitle)
+                            Text(text = item.bTitle, color = Color.Black)
                         },
                         selectedContentColor = Color.White,
                         unselectedContentColor = Color.Black
