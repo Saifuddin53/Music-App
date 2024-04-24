@@ -100,7 +100,9 @@ fun MainView() {
                     val isSelected = currentRoute == item.bRoute
                     val color = if(isSelected) Color.White else Color.Black
                     BottomNavigationItem(selected = currentRoute == item.bRoute,
-                        onClick = { controller.navigate(item.bRoute) },
+                        onClick = {
+                            controller.navigate(item.bRoute)
+                            title.value = item.bTitle},
                         icon = {
                             Icon(painter = painterResource(id = item.icon),
                             contentDescription = null,
