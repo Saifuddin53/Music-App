@@ -69,14 +69,17 @@ fun MainView() {
             BottomNavigation(modifier = Modifier.wrapContentSize()) {
                 screensInBottomBar.forEach {
                     item ->
+                    val isSelected = currentRoute == item.bRoute
+                    val color = if(isSelected) Color.White else Color.Black
                     BottomNavigationItem(selected = currentRoute == item.bRoute,
                         onClick = { controller.navigate(item.bRoute) },
                         icon = {
                             Icon(painter = painterResource(id = item.icon),
-                            contentDescription = null)
+                            contentDescription = null,
+                                tint = color)
                                },
                         label = {
-                            Text(text = item.bTitle, color = Color.Black)
+                            Text(text = item.bTitle, color = color)
                         },
                         selectedContentColor = Color.White,
                         unselectedContentColor = Color.Black
