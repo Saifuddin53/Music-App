@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,7 +25,7 @@ import com.myprojects.musicapp.R
 @Composable
 fun HomeView() {
     val categories = listOf("Hits", "Happy", "Workout", "Running", "TGIF", "Yoga")
-    val grouped = listOf<String>("New Release", "Favourite", "Top rated").groupBy { it[0] }
+    val grouped = listOf("New Release", "Favourite", "Top rated").groupBy { it[0] }
 
     LazyColumn {
         grouped.forEach {
@@ -35,7 +34,7 @@ fun HomeView() {
                 LazyRow {
                     items(categories) {
                         category ->
-                            BrowserItem(category)
+                            BrowserItem(cat = category)
                     }
                 }
             }
@@ -44,7 +43,7 @@ fun HomeView() {
 }
 
 @Composable
-fun BrowserItem(cat: String, drawable: Int = R.drawable.baseline_apps_24, modifier: Modifier = Modifier) {
+fun BrowserItem(modifier: Modifier = Modifier, cat: String, drawable: Int = R.drawable.baseline_apps_24) {
     Column(
         modifier = modifier
             .height(200.dp)
